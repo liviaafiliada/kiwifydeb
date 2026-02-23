@@ -1,131 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acesse o Conteúdo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acesso VIP</title>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)n=f._fbq;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '709966365141872');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=709966365141872&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '709966365141872');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=709966365141872&ev=PageView&noscript=1"
+    />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
-<style>
+  <style>
+    :root{
+      --bg: #050505;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(212,175,55,0.35);
+      --gold: #d4af37;
+      --gold2: #f1d77a;
+      --text: #f5f5f5;
+      --muted: rgba(255,255,255,0.78);
+      --btnText: #0b0b0b;
+    }
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#000;
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-padding:20px;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(212,175,55,0.12), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(255,255,255,0.06), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 24px;
+    }
 
-.container{
-background:#111;
-border:1px solid #bfa14a;
-padding:40px 30px;
-border-radius:18px;
-text-align:center;
-max-width:400px;
-width:100%;
-box-shadow:0 0 50px rgba(191,161,74,.2);
-}
+    .card{
+      width: 100%;
+      max-width: 430px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      text-align:center;
+    }
 
-h1{
-font-size:23px;
-margin-bottom:15px;
-color:#d4af37;
-}
+    .title{
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
 
-p{
-font-size:14px;
-opacity:.85;
-margin-bottom:30px;
-line-height:1.5;
-}
+    .subtitle{
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
 
-.button{
-display:block;
-width:75%;
-margin:0 auto;
-padding:18px;
-border-radius:12px;
-background:linear-gradient(135deg,#d4af37,#bfa14a);
-color:#000;
-text-decoration:none;
-font-weight:bold;
-font-size:17px;
-text-align:center;
-box-shadow:0 0 20px rgba(212,175,55,.4);
-transition:.2s;
-}
+    /* ✅ IMAGEM CABE DENTRO DO CARD E NÃO "ENTOPE" A TELA */
+    .hero-wrap{
+      width: 100%;
+      display:flex;
+      justify-content:center;
+      margin: 10px 0 16px;
+    }
 
-.button:hover{
-transform:scale(1.03);
-box-shadow:0 0 30px rgba(212,175,55,.6);
-}
+    .hero{
+      width: 100%;
+      max-width: 310px;      /* controla o tamanho dentro do card */
+      max-height: 220px;     /* não deixa ficar gigante */
+      height: auto;
+      display:block;
+      object-fit: contain;   /* não corta, só encaixa */
+      border-radius: 14px;
+      border: 1px solid rgba(212,175,55,0.25);
+      box-shadow: 0 0 26px rgba(212,175,55,0.18);
+      background: rgba(0,0,0,0.35);
+      padding: 6px;          /* dá “moldura” */
+    }
 
-.small{
-font-size:11px;
-opacity:.6;
-margin-top:20px;
-}
+    .badges{
+      display:flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content:center;
+      margin: 6px 0 18px;
+    }
 
-</style>
+    .badge{
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.88);
+    }
+
+    /* ✅ BOTÃO SEM SUMIR + CENTRALIZADO */
+    .btn{
+      width: 78%;
+      max-width: 310px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      margin: 0 auto;
+      padding: 14px 14px;
+      border-radius: 14px;
+      text-decoration:none;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      color: var(--btnText);
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      border: 0;
+      box-shadow: 0 18px 30px rgba(212,175,55,0.22);
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+    .btn:active{ transform: translateY(0px); filter: brightness(0.98); }
+
+    .foot{
+      margin: 14px 0 0;
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.35;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="card">
+    <h1 class="title">✨ Você está a um passo de virar o jogo</h1>
+    <p class="subtitle">
+      Falta só confirmar o acesso e seguir para a página segura.
+    </p>
 
-<div class="container">
+    <!-- ✅ TROQUE O NOME DA IMAGEM AQUI -->
+    <div class="hero-wrap">
+      <img class="hero" src="Design sem nome (6).png" alt="Imagem de destaque" />
+    </div>
 
-<img src="Design sem nome (6).png" class=".imagem-topo{
-max-width: 220px;
-width: 100%;
-height: auto; /* ESSA LINHA É A CHAVE */
-display: block;
-margin: 0 auto 25px auto;
-border-radius: 12px;
-box-shadow: 0 0 25px rgba(212,175,55,.3);
-}
-  
-<h1>Você está a um passo de iniciar sua virada no digital.</h1>
+    <div class="badges">
+      <div class="badge">📌 Conteúdo direto</div>
+      <div class="badge">⚡ Acesso imediato</div>
+      <div class="badge">🔒 Página segura</div>
+    </div>
 
-<p>
-O próximo clique pode abrir uma nova fase.
-Continue com segurança para acessar o conteúdo.
-</p>
+    <a class="btn"
+       href="https://pay.kiwify.com.br/N3NYPE4?afid=FQM8jaTt"
+       target="_blank"
+       rel="noopener"
+       onclick="fbq('track','Lead');">
+      ✅ Quero acessar agora
+    </a>
 
-<a class="button"
-href="https://pay.kiwify.com.br/N3NYPE4?afid=FQM8jaTt"
-target="_blank"
-onclick="fbq('track','InitiateCheckout');">
-✨ Quero Acessar Agora
-</a>
-
-<div class="small">
-Se estiver no Instagram, abra pelo navegador para melhor experiência.
-</div>
-
-</div>
-
+    <p class="foot">
+      Ao clicar, você será redirecionada para a página oficial de pagamento.
+    </p>
+  </div>
 </body>
-</html>
 </html>
