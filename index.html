@@ -1,182 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Acesso VIP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrutura Validada | Marketing Digital</title>
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '709966365141872');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=709966365141872&ev=PageView&noscript=1"
-    />
-  </noscript>
-  <!-- End Meta Pixel Code -->
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#000;
+    text-align:center;
+}
 
-  <style>
-    :root{
-      --bg: #050505;
-      --card: rgba(255,255,255,0.06);
-      --border: rgba(212,175,55,0.35);
-      --gold: #d4af37;
-      --gold2: #f1d77a;
-      --text: #f5f5f5;
-      --muted: rgba(255,255,255,0.78);
-      --btnText: #0b0b0b;
-    }
+.container{
+    max-width: 500px;
+    margin:auto;
+    padding:20px;
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(1200px 600px at 20% 10%, rgba(212,175,55,0.12), transparent 60%),
-        radial-gradient(900px 500px at 80% 20%, rgba(255,255,255,0.06), transparent 55%),
-        var(--bg);
-      color: var(--text);
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 24px;
-    }
+.card{
+    background: rgba(255, 182, 193, 0.18);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-    .card{
-      width: 100%;
-      max-width: 430px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 22px 18px;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.55);
-      backdrop-filter: blur(10px);
-      text-align:center;
-    }
+h1{
+    font-size:22px;
+    margin-bottom:10px;
+}
 
-    .title{
-      margin: 0 0 10px;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-    }
+h2{
+    font-size:18px;
+    margin-top:30px;
+}
 
-    .subtitle{
-      margin: 0 0 16px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.35;
-    }
+p{
+    font-size:15px;
+    line-height:1.5;
+}
 
-    /* ✅ IMAGEM CABE DENTRO DO CARD E NÃO "ENTOPE" A TELA */
-    .hero-wrap{
-      width: 100%;
-      display:flex;
-      justify-content:center;
-      margin: 10px 0 16px;
-    }
+.prova{
+    margin:20px 0;
+}
 
-    .hero{
-      width: 100%;
-      max-width: 310px;      /* controla o tamanho dentro do card */
-      max-height: 220px;     /* não deixa ficar gigante */
-      height: auto;
-      display:block;
-      object-fit: contain;   /* não corta, só encaixa */
-      border-radius: 14px;
-      border: 1px solid rgba(212,175,55,0.25);
-      box-shadow: 0 0 26px rgba(212,175,55,0.18);
-      background: rgba(0,0,0,0.35);
-      padding: 6px;          /* dá “moldura” */
-    }
+.prova img{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:10px;
+}
 
-    .badges{
-      display:flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content:center;
-      margin: 6px 0 18px;
-    }
+.botao{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    background:#ff4f8b;
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:12px;
+    transition:0.3s;
+}
 
-    .badge{
-      font-size: 12px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.88);
-    }
+.botao:hover{
+    background:#e04379;
+}
 
-    /* ✅ BOTÃO SEM SUMIR + CENTRALIZADO */
-    .btn{
-      width: 78%;
-      max-width: 310px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      margin: 0 auto;
-      padding: 14px 14px;
-      border-radius: 14px;
-      text-decoration:none;
-      font-weight: 900;
-      letter-spacing: 0.2px;
-      color: var(--btnText);
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      border: 0;
-      box-shadow: 0 18px 30px rgba(212,175,55,0.22);
-      transition: transform .12s ease, filter .12s ease;
-    }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
-    .btn:active{ transform: translateY(0px); filter: brightness(0.98); }
+.lista{
+    text-align:left;
+    margin-top:20px;
+}
 
-    .foot{
-      margin: 14px 0 0;
-      font-size: 11.5px;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.35;
-    }
-  </style>
+.lista li{
+    margin-bottom:8px;
+}
+
+.rodape{
+    margin-top:40px;
+    font-size:12px;
+    color:#666;
+}
+</style>
 </head>
 
 <body>
-  <div class="card">
-    <h1 class="title">✨Você está a um passo de virar o jogo</h1>
-   
 
-    <!-- ✅ TROQUE O NOME DA IMAGEM AQUI -->
-    <div class="hero-wrap">
-      <img class="hero" src="Design sem nome (6).png" alt="Imagem de destaque" />
-    </div>
+<div class="container">
 
-    <div class="badges">
-      <div class="badge">📌 Conteúdo direto</div>
-      <div class="badge">⚡ Acesso imediato</div>
-      <div class="badge">🔒 Página segura</div>
-    </div>
+<div class="card">
 
-    <a class="btn"
-       href="https://pay.kiwify.com.br/N3NYPE4?afid=FQM8jaTt"
-       target="_blank"
-       rel="noopener"
-       onclick="fbq('track','Lead');">
-      ✅ Quero acessar agora
-    </a>
+<h1>Em apenas 7 dias essa estrutura gerou R$48.300 em vendas como afiliada.</h1>
 
-    <p class="foot">
-      Ao clicar, você será redirecionada para a página oficial de pagamento.
-    </p>
-  </div>
+<p>Eu não comecei sabendo nada sobre marketing digital.  
+Mas depois que entendi a estrutura certa, os resultados começaram a aparecer.</p>
+
+<div class="prova">
+<img src="COLOQUE_AQUI_O_LINK_DA_SUA_IMAGEM_DE_RESULTADO">
+<p><strong>Resultados reais. Método validado.</strong></p>
+</div>
+
+<h2>O que você vai aprender:</h2>
+
+<ul class="lista">
+<li>✔ Como escolher produtos que realmente vendem</li>
+<li>✔ Como estruturar tráfego pago do jeito certo</li>
+<li>✔ Como usar Shopee e Mercado Livre como aliados</li>
+<li>✔ Como transformar clique em venda</li>
+</ul>
+
+<a href="COLOQUE_AQUI_SEU_LINK_DE_AFILIADO" class="botao">
+Quero aprender a estrutura →
+</a>
+
+</div>
+
+<div class="rodape">
+Não é promessa de ganhos. Resultados variam conforme aplicação.
+</div>
+
+</div>
+
 </body>
 </html>
