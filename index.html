@@ -1,126 +1,182 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estrutura Validada | Marketing Digital</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrutura Validada | Marketing Digital</title>
 
-<style>
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#ffffff;
-    color:#000;
-    text-align:center;
-}
+  <!-- META PIXEL (correto) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-.container{
-    max-width: 500px;
-    margin:auto;
-    padding:20px;
-}
+    fbq('init', '1433204391785054');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1433204391785054&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- FIM PIXEL -->
 
-.card{
-    background: rgba(212, 175, 55, 0.12);
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
+  <style>
+    :root{
+      --gold1:#C9A227;
+      --gold2:#D4AF37;
+      --gold3:#B8860B;
+      --card: rgba(212, 175, 55, 0.10);
+      --text:#111;
+      --muted:#555;
+    }
 
-h1{
-    font-size:22px;
-    margin-bottom:10px;
-}
+    *{ box-sizing: border-box; }
 
-h2{
-    font-size:18px;
-    margin-top:30px;
-}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#ffffff;
+      color:var(--text);
+      display:flex;
+      justify-content:center;
+      padding:38px 18px;
+    }
 
-p{
-    font-size:15px;
-    line-height:1.5;
-}
+    .container{
+      width:100%;
+      max-width:540px;
+    }
 
-.prova{
-    margin:20px 0;
-}
+    .card{
+      background: var(--card);
+      border: 1px solid rgba(184,134,11,0.18);
+      border-radius:22px;
+      padding:26px;
+      box-shadow:0 14px 40px rgba(0,0,0,0.08);
+      text-align:center;
+    }
 
-.prova img{
-    width:100%;
-    border-radius:12px;
-    margin-bottom:10px;
-}
+    .tag{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:12px;
+      color:var(--text);
+      background: rgba(255,255,255,0.65);
+      border: 1px solid rgba(184,134,11,0.20);
+      margin-bottom:14px;
+    }
 
-.botao{
-    display:inline-block;
-    margin-top:20px;
-    padding:15px 25px;
-    background: linear-gradient(45deg,#C9A227,#D4AF37,#B8860B);
-    color:#fff;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:12px;
-    transition:0.3s;
-    box-shadow:0 8px 20px rgba(212,175,55,0.4);
-}
+    h1{
+      font-size:22px;
+      margin: 0 0 10px;
+      line-height:1.25;
+    }
 
-.botao:hover{
-    transform:scale(1.03);
-}
+    p{
+      margin: 0 0 14px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+    }
 
-.lista{
-    text-align:left;
-    margin-top:20px;
-}
+    .bullets{
+      text-align:left;
+      margin:16px 0 18px;
+      padding:0;
+      list-style:none;
+    }
 
-.lista li{
-    margin-bottom:8px;
-}
+    .bullets li{
+      margin:10px 0;
+      font-size:14.5px;
+      color:#222;
+    }
 
-.rodape{
-    margin-top:40px;
-    font-size:12px;
-    color:#666;
-}
-</style>
+    .note{
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(184,134,11,0.18);
+      border-radius:16px;
+      padding:14px;
+      color:#333;
+      font-size:13.5px;
+      line-height:1.5;
+      margin: 14px 0 18px;
+    }
+
+    .btn{
+      display:inline-block;
+      width:100%;
+      max-width:420px;
+      padding:16px 22px;
+      background: linear-gradient(45deg,var(--gold1),var(--gold2),var(--gold3));
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(212,175,55,0.35);
+      transition: transform .15s ease, opacity .15s ease;
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      opacity:0.95;
+    }
+
+    .fine{
+      margin-top:14px;
+      font-size:12px;
+      color:#777;
+      line-height:1.5;
+      text-align:center;
+    }
+  </style>
 </head>
 
 <body>
+  <main class="container">
+    <section class="card">
+      <div class="tag">Estrutura Validada</div>
 
-<div class="container">
+      <h1>Em 7 dias, uma estrutura gerou R$2.600 em comissão como afiliada.</h1>
 
-<div class="card">
+      <p>
+        Eu não comecei sabendo nada sobre marketing digital.
+        Mas quando entendi o passo a passo, os resultados começaram a aparecer.
+      </p>
 
-<h1>Em apenas 7 dias essa estrutura gerou R$2.600 em comissão como afiliada.</h1>
+      <ul class="bullets">
+        <li>✔ Como escolher ofertas/produtos que realmente vendem</li>
+        <li>✔ Como montar uma estrutura simples e repetível</li>
+        <li>✔ Como transformar clique em ação (sem “postar link” no escuro)</li>
+        <li>✔ Como aplicar com Shopee, Mercado Livre e outros</li>
+      </ul>
 
-<p>Eu não comecei sabendo nada sobre marketing digital.  
-Mas depois que entendi a estrutura certa, os resultados começaram a aparecer.</p>
+      <div class="note">
+        <strong>Importante:</strong> não é promessa de ganhos.
+        Resultados variam conforme aplicação. Ao clicar, você verá todos os detalhes,
+        bônus e garantia na página oficial.
+      </div>
 
-<div class="prova">
-<p><strong>Resultados reais. Método validado.</strong></p>
-</div>
+      <a class="btn"
+         href="https://pay.kiwify.com.br/N3NYPE4?afid=FQM8jaTt”
+         target="_blank"
+         rel="noopener"
+         onclick="try{fbq('track','Lead')}catch(e){}">
+        Quero acessar o método agora →
+      </a>
 
-<h2>O que você vai aprender:</h2>
-
-<ul class="lista">
-<li>✔ Como escolher produtos que realmente vendem</li>
-<li>✔ Como estruturar tráfego pago do jeito certo</li>
-<li>✔ Como usar Shopee e Mercado Livre como aliados</li>
-<li>✔ Como transformar clique em venda</li>
-</ul>
-
-<a href="https://pay.kiwify.com.br/N3NYPE4?afid=FQM8jaTt" class="botao">
-Quero aprender a estrutura →
-</a>
-
-</div>
-
-<div class="rodape">
-Não é promessa de ganhos. Resultados variam conforme aplicação.
-</div>
-
-</div>
-
+      <div class="fine">
+        Dica: se você estiver no celular e abrir lento, tente novamente em aba anônima.
+      </div>
+    </section>
+  </main>
 </body>
 </html>
